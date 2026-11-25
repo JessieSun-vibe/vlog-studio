@@ -1,0 +1,21 @@
+{
+  "name": "我的 vlog 风格",
+  "spec_doc": "",
+  "size": [1920, 1080],
+  "fps": 30,
+  "fonts": {
+    "subtitle": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+    "fun": "",
+    "brand": ""
+  },
+  "brand": {"text": "my vlog", "size": 58, "x": 60, "y": 62, "color": "#ffffff"},
+  "chapter_tag": {"size": 46, "x": 62, "y": 118, "color": "#ff5c8a", "pin_color": "#ff4d6d"},
+  "fx": {"size": 118, "fill": "#ffd640", "stroke": "#ff6a2c", "stroke_width": 12, "rotate": 4, "y": 290},
+  "subtitles": {"order": "cn_en", "cn_size": 51, "en_size": 33, "y": 918, "line_gap": 56, "box_alpha": 115, "max_width": 1400},
+  "sfx": {"chapter": "", "page": "", "photo": "", "pop": ""},
+  "stickers_dir": "",
+  "bg_under_speech": 0.12,
+  "speech_lufs": -17,
+  "music_lufs": -19,
+  "master_lufs": -16
+}

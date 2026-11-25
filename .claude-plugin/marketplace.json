@@ -1,0 +1,12 @@
+{
+  "name": "vlog-studio",
+  "owner": {"name": "JessieSun-vibe", "url": "https://github.com/JessieSun-vibe"},
+  "metadata": {"description": "Turn phone/camera footage into bilingual lifestyle vlogs with subtitles, stickers, 花字 and sound effects."},
+  "plugins": [
+    {
+      "name": "vlog-studio",
+      "source": "./plugin",
+      "description": "Edit real-life footage into a share-ready vlog: voiceover or talking-head, pause/retake cleanup, bilingual subtitles, chapter tags, pop-up captions, animated stickers (incl. face-following), SFX, storyboard approval before render."
+    }
+  ]
+}
