@@ -40,7 +40,7 @@ def check():
     brew = shutil.which("brew")
     if mac and not brew:
         say(WARN, "Homebrew", "没装（用来装 ffmpeg / uv）",
-            '/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
+            '请用户自己在终端运行（要输入电脑密码，AI 不要代为运行）：/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
     ff = shutil.which("ffmpeg")
     if not ff:
         say(BAD, "ffmpeg", "没装", "brew install ffmpeg")
@@ -50,7 +50,8 @@ def check():
         if " libvpx " in dec or "libvpx VP8" in dec:
             say(OK, "ffmpeg", f"{ver}，带 libvpx（能读透明动态贴图）")
         else:
-            say(WARN, "ffmpeg", f"{ver}，没有 libvpx：动态贴图会没有透明背景", "brew reinstall ffmpeg")
+            say(WARN, "ffmpeg", f"{ver}，没有 libvpx：动态贴图会没有透明背景",
+                "brew reinstall ffmpeg（Homebrew 版自带 libvpx；如果用的是别处装的 ffmpeg，先 brew install ffmpeg 并确认 which ffmpeg 指向 /opt/homebrew/bin/ffmpeg）")
     if shutil.which("ffprobe"):
         say(OK, "ffprobe", "有")
     else:
@@ -84,7 +85,7 @@ def prefetch():
                                        f"import sys; sys.path.insert(0, {here!r}); import face_track; face_track.detector(960, 540)"]),
     ]
     if platform.system() == "Darwin" and platform.machine() == "arm64":
-        steps.append(("语音识别（mlx-whisper + 模型约 1.5GB）", ["uv", "run", "--quiet", "--with", "mlx-whisper", "python", "-c",
+        steps.append(("语音识别（mlx-whisper 等依赖约 0.5GB + 模型约 1.5GB）", ["uv", "run", "--quiet", "--with", "mlx-whisper", "python", "-c",
                       "from huggingface_hub import snapshot_download; snapshot_download('mlx-community/whisper-large-v3-turbo')"]))
     for name, cmd in steps:
         print(f"… {name}", flush=True)

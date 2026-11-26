@@ -81,7 +81,7 @@ claude plugin marketplace update vlog-studio && claude plugin update vlog-studio
 git clone https://github.com/JessieSun-vibe/vlog-studio.git ~/vlog-studio
 ```
 ```bash
-ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
+mkdir -p ~/.codex/skills && ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
 ```
 
 其他工具把 `plugin/skills/vlog-studio` 放进它们的 skills 文件夹即可。更新时在 `~/vlog-studio` 里 `git pull`。
@@ -92,13 +92,13 @@ ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
    ```bash
    brew install ffmpeg uv
    ```
-2. **安装 skill**：用上面「安装」里的命令。装完**新开一个 Claude Code 会话**，skill 才会加载。
+2. **安装 skill**：用上面「安装」里的命令。要正式剪片时，**新开一个 Claude Code 会话**，skill 才会自动生效（安装、自检、建素材库在当前会话就能做）。
 3. **准备素材**：一支片子一个文件夹，视频、照片、口播录音都放进去。口播用手机「语音备忘录」录就行（设置里音质选「无损」），说错了停一下，从这句开头重说，剪的时候会自动去掉。
 4. **说一句话**，把真实信息一起告诉它：
    > 用 vlog-studio 帮我剪这个，素材在「桌面/海岛酒店」，酒店叫 XXX，两晚 800，我打 9.5 分。
 5. **第一次会多问几件事，也会多等一会儿**：
    - 角标写什么、字幕中文在上还是英文在上、要不要一键建立素材库（约 45MB）。
-   - 第一次把语音转成文字时，会自动下载语音识别模型（约 1.5GB）和依赖（几百 MB）。网速慢时可能要等十几分钟，看起来像卡住了，其实在下载；可以换一个快一点的网络。以后就不用再下载了。
+   - 第一次把语音转成文字时，会自动下载约 2GB（语音识别模型约 1.5GB + Python 依赖约 0.5GB）。网速慢时可能要等十几分钟，看起来像卡住了，其实在下载；可以换一个快一点的网络，或者提前运行 `doctor.py --prefetch` 下载好。以后就不用再下载了。
 6. **跟着它确认，拿成片**：画幅 → 口播稿、保留哪些现场原声 → **分镜**（每段一张样张，你确认后才生成视频）→ 拿到 MP4 和双语字幕 SRT（可以导入剪映继续改）。
 
 ## 怎么用
@@ -120,10 +120,11 @@ ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
 | **素材清单** | 每个素材都写了适合什么场景（如「钱眼脸｜价格、性价比」），剪片时 AI 按你说的内容挑 |
 | **预览页** | 用 Chrome 打开 `素材预览.html`：贴图会动、音效能试听、字体有示例 |
 
-也可以自己手动运行（约 45MB，从 Google 官方源下载，断网可以续传）：
+也可以自己手动运行（约 45MB，从 Google 官方源下载，断网可以续传）。先找到 skill 文件夹：Claude Code 安装的在 `~/.claude/plugins` 下面（`find ~/.claude/plugins -path "*skills/vlog-studio/scripts/doctor.py"`，去掉结尾的 `/scripts/doctor.py`），Codex 的是 `~/vlog-studio/plugin/skills/vlog-studio`。然后：
 ```bash
-python3 plugin/skills/vlog-studio/scripts/setup_library.py ~/vlog素材库 --update-style ~/.claude/vlog-studio/style.json
+python3 <skill 文件夹>/scripts/setup_library.py ~/vlog素材库 --update-style ~/.claude/vlog-studio/style.json
 ```
+已有素材库的人不用再建；风格档案已存在时，`--update-style` 只会更新字体、音效、素材库路径，不动你的角标和字幕设置。
 想换成自己的字体、贴纸、音效，放进素材库、改风格档案就行。发布视频时记得附上 `CREDITS.md` 里的贴图署名。
 
 ## 文件结构
@@ -172,7 +173,7 @@ claude plugin install vlog-studio@vlog-studio
 
 **Easiest setup:** send this repo link to your Claude Code or Codex and say "install this for me". If it stops halfway, paste the full prompt from [SETUP_PROMPT.md](SETUP_PROMPT.md) (English version included). It installs the skill, runs the self-check (`scripts/doctor.py`) and fixes what's missing, pre-downloads the models, asks you 3 questions to create your style profile, and builds the asset library, asking before any install or large download.
 
-**First run, step by step:** (1) `brew install ffmpeg uv`; (2) install the plugin, then **start a new Claude Code session** so the skill loads; (3) put one video's clips, photos and voiceover recording in a folder (record voiceover with your phone's voice memo app, lossless quality; if you misspeak, pause and restart the sentence); (4) tell the agent "use vlog-studio to edit this folder into a vlog" plus the real facts (place, price, your rating); (5) on first use it asks for your badge text and subtitle order, offers the asset library (~45MB), and downloads the speech-recognition model (~1.5GB) the first time it transcribes, which can take a while on a slow network; (6) confirm aspect ratio, script / live reactions and the **storyboard**, then you get the MP4 and a bilingual SRT.
+**First run, step by step:** (1) `brew install ffmpeg uv`; (2) install the plugin (setup steps can run in the same session; start a **new Claude Code session** before editing so the skill loads); (3) put one video's clips, photos and voiceover recording in a folder (record voiceover with your phone's voice memo app, lossless quality; if you misspeak, pause and restart the sentence); (4) tell the agent "use vlog-studio to edit this folder into a vlog" plus the real facts (place, price, your rating); (5) on first use it asks for your badge text and subtitle order, offers the asset library (~45MB), and downloads ~2GB (speech model ~1.5GB + Python packages ~0.5GB) the first time it transcribes unless you ran `doctor.py --prefetch`, which can take a while on a slow network; (6) confirm aspect ratio, script / live reactions and the **storyboard**, then you get the MP4 and a bilingual SRT.
 
 **Install (Codex / other SKILL.md agents):** clone this repo and link `plugin/skills/vlog-studio` into your agent's skills folder (e.g. `~/.codex/skills/`).
 
