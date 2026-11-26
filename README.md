@@ -3,7 +3,7 @@
 **把手机 / 相机拍的生活素材，剪成可以直接发小红书、B 站、抖音的 vlog。**
 交给你的 AI 编程助手（Claude Code、Codex 等），说一句「帮我把这些素材剪成 vlog」，它会看素材、转写语音、写口播稿、出分镜给你确认，然后剪出带中英双语字幕、章节标签、花字、动态贴图和音效的成片。
 
-[English](#english) · [安装](#安装) · [第一次使用](#第一次使用新手-6-步) · [怎么用](#怎么用)
+[English](#english) · [一键安装](SETUP_PROMPT.md) · [安装](#安装) · [第一次使用](#第一次使用新手-6-步) · [怎么用](#怎么用)
 
 ![成片示例：海岛酒店 vlog](docs/images/cover.jpg)
 
@@ -31,6 +31,12 @@
 ```
 
 每一步需要你决定的事（画幅、口播稿、保留哪些原声、分镜）都会停下来问你；字幕只写你说过的话，不替你编感受。
+
+## 最省事的安装：复制一段话给你的 AI
+
+打开 [SETUP_PROMPT.md](SETUP_PROMPT.md)，把里面那段话整段复制，粘贴给你的 Claude Code 或 Codex。它会自己完成：安装 skill → 检查电脑缺什么并帮你装好 → 提前下载语音识别模型 → 问你 3 个问题建立风格档案 → 建立素材库。需要装软件或下载大文件时，它会先问你。
+
+想自己一步步装，看下面。
 
 ## 安装
 
@@ -113,7 +119,7 @@ python3 plugin/skills/vlog-studio/scripts/setup_library.py ~/vlog素材库 --upd
 ```
 plugin/skills/vlog-studio/
 ├── SKILL.md                 流程说明（AI 读这个）
-├── scripts/                 看素材、转写、清理人声、人脸跟踪、分镜、渲染、变速、建素材库、下载贴图
+├── scripts/                 安装自检、看素材、转写、清理人声、人脸跟踪、分镜、渲染、变速、建素材库、下载贴图
 ├── assets/                  附带的 18 个原创音效、素材库清单
 ├── references/              时间线格式、三种视频类型、踩过的坑
 └── styles/                  风格档案模板和字段说明
@@ -151,6 +157,8 @@ claude plugin marketplace add JessieSun-vibe/vlog-studio
 ```bash
 claude plugin install vlog-studio@vlog-studio
 ```
+
+**Easiest setup:** copy the prompt in [SETUP_PROMPT.md](SETUP_PROMPT.md) (English version included) and paste it to your Claude Code or Codex. It installs the skill, runs the self-check (`scripts/doctor.py`) and fixes what's missing, pre-downloads the models, asks you 3 questions to create your style profile, and builds the asset library, asking before any install or large download.
 
 **First run, step by step:** (1) `brew install ffmpeg uv`; (2) install the plugin, then **start a new Claude Code session** so the skill loads; (3) put one video's clips, photos and voiceover recording in a folder (record voiceover with your phone's voice memo app, lossless quality; if you misspeak, pause and restart the sentence); (4) tell the agent "use vlog-studio to edit this folder into a vlog" plus the real facts (place, price, your rating); (5) on first use it asks for your badge text and subtitle order, offers the asset library (~45MB), and downloads the speech-recognition model (~1.5GB) the first time it transcribes, which can take a while on a slow network; (6) confirm aspect ratio, script / live reactions and the **storyboard**, then you get the MP4 and a bilingual SRT.
 
