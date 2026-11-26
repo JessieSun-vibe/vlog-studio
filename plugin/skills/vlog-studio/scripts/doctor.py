@@ -30,14 +30,17 @@ def run(cmd, timeout=60):
 
 
 def check():
-    mac = platform.system() == "Darwin"; arm = platform.machine() in ("arm64", "aarch64")
+    mac = platform.system() == "Darwin"; arm = platform.machine() in ("arm64", "aarch64"); win = platform.system() == "Windows"
     if mac and arm:
-        say(OK, "电脑", f"macOS {platform.mac_ver()[0]} · Apple 芯片：全部功能可用")
+        say(OK, "电脑", f"macOS {platform.mac_ver()[0]} · Apple 芯片：全部功能可用（转写用 mlx-whisper，最快）")
     elif mac:
-        say(WARN, "电脑", "Intel 芯片的 Mac：本地语音转写（mlx-whisper）不可用，其余功能可用",
-            "需要转写时可以改用 openai-whisper / faster-whisper，或在剪映里识别字幕")
+        say(OK, "电脑", "Intel 芯片的 Mac：全部功能可用，转写改用 faster-whisper（CPU，会慢一些）")
     else:
-        say(WARN, "电脑", f"{platform.system()}：只在 Apple 芯片 Mac 上完整测试过，本地转写不可用", "")
+        gpu = "，有 NVIDIA 显卡时自动用显卡加速" if shutil.which("nvidia-smi") else "（CPU，会慢一些）"
+        say(OK, "电脑", f"{platform.system()}：全部功能可用，转写改用 faster-whisper{gpu}")
+    if win and not (shutil.which("ffmpeg") and shutil.which("uv")):
+        say(WARN, "安装方式", "Windows 用 winget 装 ffmpeg 和 uv（下面的 brew 命令换成这两条）",
+            "winget install Gyan.FFmpeg   和   winget install astral-sh.uv   （装完重开一个终端窗口）")
     brew = shutil.which("brew")
     brew_bin = next((b for b in ("/opt/homebrew/bin/brew", "/usr/local/bin/brew") if os.path.exists(b)), None)
     need_brew = not (shutil.which("ffmpeg") and shutil.which("uv"))
@@ -70,7 +73,7 @@ def check():
     say(OK, "Python", f"{platform.python_version()}（剪片脚本由 uv 用自己的 Python 运行，系统版本不要紧）")
     style = os.path.expanduser("~/.claude/vlog-studio/style.json")
     if os.path.exists(style):
-        st = json.load(open(style)); lib = st.get("library")
+        st = json.load(open(style, encoding="utf-8")); lib = st.get("library")
         say(OK, "风格档案", style)
         if lib and os.path.isdir(lib):
             say(OK, "素材库", lib)
@@ -78,7 +81,8 @@ def check():
             say(WARN, "素材库", "还没建", f'python3 "{HERE}/setup_library.py" <素材库文件夹> --update-style ~/.claude/vlog-studio/style.json')
     else:
         say(WARN, "风格档案", "还没有（第一次剪片时 AI 会问你几个问题再建）", "")
-    hf = os.path.expanduser("~/.cache/huggingface/hub/models--mlx-community--whisper-large-v3-turbo")
+    repo = "mlx-community--whisper-large-v3-turbo" if (mac and arm) else "mobiuslabsgmbh--faster-whisper-large-v3-turbo"
+    hf = os.path.join(os.environ.get("HF_HOME", os.path.expanduser("~/.cache/huggingface")), "hub", f"models--{repo}")
     say(OK if os.path.isdir(hf) else WARN, "语音识别模型", "已下载" if os.path.isdir(hf) else "还没下载（约 1.5GB，第一次转写时自动下）",
         "" if os.path.isdir(hf) else f'python3 "{HERE}/doctor.py" --prefetch（共约 2GB：模型 1.5GB + 依赖 0.5GB）')
 
@@ -94,6 +98,9 @@ def prefetch():
     if platform.system() == "Darwin" and platform.machine() == "arm64":
         steps.append(("语音识别（mlx-whisper 等依赖约 0.5GB + 模型约 1.5GB）", ["uv", "run", "--quiet", "--with", "mlx-whisper", "python", "-c",
                       "from huggingface_hub import snapshot_download; snapshot_download('mlx-community/whisper-large-v3-turbo')"]))
+    else:
+        steps.append(("语音识别（faster-whisper 等依赖约 0.3GB + 模型约 1.6GB）", ["uv", "run", "--quiet", "--with", "faster-whisper>=1.1", "python", "-c",
+                      "from huggingface_hub import snapshot_download; snapshot_download('mobiuslabsgmbh/faster-whisper-large-v3-turbo')"]))
     for name, cmd in steps:
         print(f"… {name}", flush=True)
         code, out = run(cmd, timeout=3600)

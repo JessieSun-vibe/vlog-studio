@@ -21,8 +21,8 @@ def main():
     def conv(m):
         h, mi, s, ms = map(int, m.groups()); t = (h * 3600 + mi * 60 + s + ms / 1000) / k
         ms = int(round(t * 1000)); return f"{ms // 3600000:02d}:{ms // 60000 % 60:02d}:{ms // 1000 % 60:02d},{ms % 1000:03d}"
-    text = re.sub(r"(\d\d):(\d\d):(\d\d),(\d\d\d)", conv, open(srt).read())
-    out_srt = out.rsplit(".", 1)[0] + ".srt"; open(out_srt, "w").write(text)
+    text = re.sub(r"(\d\d):(\d\d):(\d\d),(\d\d\d)", conv, open(srt, encoding="utf-8").read())
+    out_srt = out.rsplit(".", 1)[0] + ".srt"; open(out_srt, "w", encoding="utf-8").write(text)
 
     def sec(x):
         h, m, r_ = x.split(":"); s, ms = r_.split(","); return int(h) * 3600 + int(m) * 60 + int(s) + int(ms) / 1000

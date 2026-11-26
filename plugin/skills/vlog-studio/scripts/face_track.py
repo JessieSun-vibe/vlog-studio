@@ -68,7 +68,7 @@ def main():
                                                      for x, y, w, h in faces]})
         t += 1 / a.fps
     samples = smooth(samples)
-    json.dump({"video": os.path.abspath(a.video), "width": W, "height": H, "detector": kind, "samples": samples}, open(a.out, "w"), indent=1)
+    json.dump({"video": os.path.abspath(a.video), "width": W, "height": H, "detector": kind, "samples": samples}, open(a.out, "w", encoding="utf-8"), indent=1)
     counts = [len(s["faces"]) for s in samples]
     print(f"{kind}：{len(samples)} 个采样点，人脸数 {min(counts) if counts else 0}–{max(counts) if counts else 0}，"
           f"有脸的采样占 {sum(1 for c in counts if c) / max(1, len(counts)):.0%}")

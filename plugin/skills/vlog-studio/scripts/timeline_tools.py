@@ -13,7 +13,7 @@ import array, json, math, re, wave
 
 class Transcript:
     def __init__(self, path):
-        self.data = json.load(open(path))
+        self.data = json.load(open(path, encoding="utf-8"))
         self.segs = [s for s in self.data["segments"] if s.get("words")]
         self.wav = self.data.get("wav16k")
         self._x = None

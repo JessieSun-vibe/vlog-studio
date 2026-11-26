@@ -36,7 +36,7 @@ def quiet_point(x, sr, a, b, step=0.02):
 
 
 def report(tjson, pause):
-    r = json.load(open(tjson)); words = [w for s in r["segments"] for w in s.get("words", [])]
+    r = json.load(open(tjson, encoding="utf-8")); words = [w for s in r["segments"] for w in s.get("words", [])]
     cuts = []
     print("== 停顿（建议缩到约 0.18s）")
     for p, q in zip(words, words[1:]):
@@ -55,7 +55,7 @@ def report(tjson, pause):
         if a and b and difflib.SequenceMatcher(None, a, b).ratio() > .6:
             print(f"  {s1['words'][0]['start']:7.2f} 「{a}」 ≈ {s2['words'][0]['start']:7.2f} 「{b}」")
     out = os.path.splitext(tjson)[0] + "_cuts_suggested.json"
-    json.dump(cuts, open(out, "w")); print(f"\n停顿切点建议已写到 {out}（只含停顿；重复要自己确认后加进去）")
+    json.dump(cuts, open(out, "w", encoding="utf-8")); print(f"\n停顿切点建议已写到 {out}（只含停顿；重复要自己确认后加进去）")
 
 
 def energy(wav, a, b):
@@ -67,7 +67,7 @@ def energy(wav, a, b):
 
 
 def apply(src, cuts_json, out):
-    cuts = sorted(json.load(open(cuts_json)))
+    cuts = sorted(json.load(open(cuts_json, encoding="utf-8")))
     dur = float(json.loads(subprocess.run(["ffprobe", "-v", "error", "-print_format", "json", "-show_format", src],
                                           capture_output=True, text=True).stdout)["format"]["duration"])
     keep, t = [], 0.0
@@ -83,7 +83,7 @@ def apply(src, cuts_json, out):
     fc.append(f"{''.join(lab)}concat=n={len(keep)}:v=0:a=1[o]")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-filter_complex", ";".join(fc), "-map", "[o]",
                     "-c:a", "pcm_s24le", out], check=True)
-    json.dump({"source": os.path.abspath(src), "cuts": cuts, "keep": keep}, open(out + ".edl.json", "w"), indent=1)
+    json.dump({"source": os.path.abspath(src), "cuts": cuts, "keep": keep}, open(out + ".edl.json", "w", encoding="utf-8"), indent=1)
     new = sum(b - a for a, b in keep)
     print(f"{dur:.1f}s -> {new:.1f}s（删掉 {dur - new:.1f}s，{len(keep)} 段）")
 

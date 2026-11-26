@@ -14,12 +14,13 @@ sys.path.insert(0, HERE)
 from timeline_tools import split_sub  # noqa: E402
 
 FALLBACK_FONTS = ["/System/Library/Fonts/Hiragino Sans GB.ttc", "/System/Library/Fonts/STHeiti Medium.ttc",
-                  "/System/Library/Fonts/PingFang.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc"]
+                  "/System/Library/Fonts/PingFang.ttc", "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+                  "C:/Windows/Fonts/msyh.ttc", "C:/Windows/Fonts/msyhbd.ttc", "C:/Windows/Fonts/simhei.ttf"]
 
 
 # ---------------- 风格 ----------------
 def load_style(path):
-    st = json.load(open(os.path.expanduser(path)))
+    st = json.load(open(os.path.expanduser(path), encoding="utf-8"))
     def font(key, default=None):
         want = st.get("fonts", {}).get(key)
         for p in [want, default, *FALLBACK_FONTS]:
@@ -112,7 +113,7 @@ def face_positions(track_path, who, times):
     """按时间取第 who 个人（从左往右数）的脸：返回 [(cx, cy, w)]（0–1 比例），中间线性插值。
     用全片中位位置给每个人定「角色」，某一帧少检测到一张脸时按最近距离匹配，不会把人认错。"""
     import statistics
-    tr = json.load(open(track_path)); S = tr["samples"]
+    tr = json.load(open(track_path, encoding="utf-8")); S = tr["samples"]
     n = max(len(x["faces"]) for x in S)
     full = [x["faces"] for x in S if len(x["faces"]) == n]
     roles = [statistics.median(f[i]["cx"] for f in full) for i in range(n)]
@@ -152,7 +153,7 @@ def follow_layer(sticker, p, dur, W, H, FPS, d, q):
     n = int(round(dur * FPS))
     times = [v.get("start", 0) + (k / FPS) * sp for k in range(n)]
     pos = face_positions(f["track"], f.get("who", 0), times)
-    tr = json.load(open(f["track"])); sx, sy = W, H  # 轨迹是 0–1 比例，按输出画面换算（源画面同比例）
+    tr = json.load(open(f["track"], encoding="utf-8")); sx, sy = W, H  # 轨迹是 0–1 比例，按输出画面换算（源画面同比例）
     out = os.path.join(d, f"follow{q}.mov")
     proc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgba", "-s", f"{W}x{H}", "-r", str(FPS),
                              "-i", "-", "-c:v", "qtrle", out], stdin=subprocess.PIPE)
@@ -346,7 +347,7 @@ def main():
     ap.add_argument("timeline"); ap.add_argument("--style", default="~/.claude/vlog-studio/style.json")
     ap.add_argument("--work"); ap.add_argument("--only", help="只重渲这些片段号，如 3,4（其余用上次的结果）")
     a = ap.parse_args()
-    tl = json.load(open(a.timeline)); st = load_style(a.style)
+    tl = json.load(open(a.timeline, encoding="utf-8")); st = load_style(a.style)
     out = tl["output"]; work = a.work or os.path.splitext(out)[0] + "_work"; os.makedirs(work, exist_ok=True)
     only = {int(x) for x in a.only.split(",")} if a.only else None
     pop = os.path.join(work, "pop.wav"); make_pop(pop)
@@ -359,9 +360,9 @@ def main():
         if only is None or (i + 1) in only or not os.path.exists(seg_path):
             print(f"片段 {i + 1}/{len(tl['pieces'])}", flush=True)
             seg_path, dur, s_srt = render_piece(i, p, tl, st, work, first)
-            json.dump(s_srt, open(seg_path + ".srt.json", "w"), ensure_ascii=False)
+            json.dump(s_srt, open(seg_path + ".srt.json", "w", encoding="utf-8"), ensure_ascii=False)
         else:
-            dur = piece_duration(p); s_srt = json.load(open(seg_path + ".srt.json"))
+            dur = piece_duration(p); s_srt = json.load(open(seg_path + ".srt.json", encoding="utf-8"))
         segs.append(seg_path)
         for e in p.get("sfx", []):
             f = sfx_files.get(e.get("name"), os.path.expanduser(e.get("file", "")))
@@ -374,7 +375,7 @@ def main():
         srt += [(t + x0, t + x1, cn, en) for x0, x1, cn, en in s_srt]
         prev = p.get("chapter"); t += dur
     lst = os.path.join(work, "list.txt")
-    open(lst, "w").writelines(f"file '{s}'\n" for s in segs)
+    open(lst, "w", encoding="utf-8").writelines(f"file '{s}'\n" for s in segs)
     joined = os.path.join(work, "joined.mp4")
     run(["ffmpeg", "-y", "-f", "concat", "-safe", "0", "-i", lst, "-c", "copy", joined])
     ins, fc, labels = ["-i", joined], [], ["[0:a]"]
@@ -402,7 +403,7 @@ def main():
         else:
             merged.append(x)
     srt = merged
-    with open(os.path.splitext(out)[0] + ".srt", "w") as f:
+    with open(os.path.splitext(out)[0] + ".srt", "w", encoding="utf-8") as f:
         for n, (x0, x1, cn, en) in enumerate(srt, 1):
             f.write(f"{n}\n{srt_time(x0)} --> {srt_time(x1)}\n{cn}\n" + (f"{en}\n" if en else "") + "\n")
     print(f"完成：{out}（{t:.1f}s，{len(srt)} 条字幕，{len(ev)} 个音效）")

@@ -10,7 +10,9 @@
 0. 先看是不是已经装过：Claude Code 运行 `claude plugin list`（找不到 claude 命令就看 ~/.claude/plugins 里有没有 vlog-studio），Codex 看 ~/.codex/skills/vlog-studio 是否存在；再看 ~/.claude/vlog-studio/style.json 是否存在。
    已经装过就告诉我，改成问我要不要更新（Claude Code：`claude plugin marketplace update vlog-studio && claude plugin update vlog-studio@vlog-studio`；Codex：在 ~/vlog-studio 里 `git pull`），然后直接跳到第 3 步自检。
 
-1. 基础工具（全新的 Mac 先做这步）：
+1. 基础工具（全新的电脑先做这步）：
+   - **Windows**：不用 Homebrew。告诉我要装 ffmpeg 和 uv（几百 MB），我同意后在 PowerShell 运行 `winget install Gyan.FFmpeg` 和 `winget install astral-sh.uv`，装完请我重开一个终端窗口。后面命令里的 `python3` 换成 `python`，`ln -s` 改成直接复制文件夹，`~` 指 %USERPROFILE%。然后跳到第 2 步。
+   - **Mac**（Apple 芯片和 Intel 都按下面做）：
    - 运行 `which brew || ls /opt/homebrew/bin/brew`。
    - 完全没有 Homebrew：告诉我需要装 Homebrew（它会顺带装好 Xcode 命令行工具，约 1–2GB，要输入电脑密码）。把这条命令发给我，让我自己在「终端」App 里运行，不要替我运行：
      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -51,7 +53,9 @@ Please install and set up the vlog editing skill "vlog-studio": https://github.c
 Do the steps below and tell me the result of each in one sentence. Before installing software, downloading large files or changing settings, tell me what and how big, and wait for my OK. Quote paths that contain spaces or non-ASCII characters.
 
 0. Already installed? Claude Code: `claude plugin list` (or look for vlog-studio under ~/.claude/plugins if there's no claude command); Codex: does ~/.codex/skills/vlog-studio exist? Also check ~/.claude/vlog-studio/style.json. If installed, tell me and offer an update instead (Claude Code: `claude plugin marketplace update vlog-studio && claude plugin update vlog-studio@vlog-studio`; Codex: `git pull` in ~/vlog-studio), then go to step 3.
-1. Base tools (do this first on a new Mac): run `which brew || ls /opt/homebrew/bin/brew`.
+1. Base tools (do this first on a new computer).
+   - **Windows**: no Homebrew. Tell me ffmpeg and uv are needed (a few hundred MB); after my OK run `winget install Gyan.FFmpeg` and `winget install astral-sh.uv` in PowerShell and ask me to open a new terminal. In later commands use `python` instead of `python3`, copy the folder instead of `ln -s`, and `~` means %USERPROFILE%. Then go to step 2.
+   - **Mac** (Apple Silicon or Intel): run `which brew || ls /opt/homebrew/bin/brew`.
    - No Homebrew at all: tell me it's needed (it also installs Xcode Command Line Tools, ~1–2GB, asks for my password). Give me this command to run myself in Terminal; don't run it for me:
      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
      When I say it's done, run `echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile` and `eval "$(/opt/homebrew/bin/brew shellenv)"`.

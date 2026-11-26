@@ -70,7 +70,7 @@ def load_catalog(st):
     """素材清单里的中文名（「revolving-hearts」→「旋转爱心」），分镜里给人看。"""
     path = os.path.expanduser(st.get("asset_catalog", "") or "")
     if os.path.exists(path):
-        for it in json.load(open(path)):
+        for it in json.load(open(path, encoding="utf-8")):
             CATALOG[it["name"]] = it.get("meaning", "").split("｜")[0] or it["name"]
 
 
@@ -89,7 +89,7 @@ def main():
     ap.add_argument("timeline"); ap.add_argument("--style", default="~/.claude/vlog-studio/style.json")
     ap.add_argument("--out", required=True); ap.add_argument("--speed", type=float)
     a = ap.parse_args()
-    tl = json.load(open(a.timeline)); st = load_style(a.style); W, H = tl.get("size", [1920, 1080]); load_catalog(st)
+    tl = json.load(open(a.timeline, encoding="utf-8")); st = load_style(a.style); W, H = tl.get("size", [1920, 1080]); load_catalog(st)
     speed = a.speed or st.get("default_speed", 1.0)
     sd = os.path.join(a.out, "stills"); os.makedirs(sd, exist_ok=True)
     rows, md, t = [], [], 0.0
@@ -159,7 +159,7 @@ def main():
     page = f"""<title>{html.escape(tl.get('title', '分镜'))}</title><meta name="viewport" content="width=device-width">
 <style>:root{{--bg:#f6f4f1;--card:#fff;--fg:#1f2326;--mut:#6c7378;--line:#e4e0da;--acc:#e0572a}}
 @media (prefers-color-scheme:dark){{:root{{--bg:#15191b;--card:#1e2427;--fg:#eceff1;--mut:#9aa3a8;--line:#30373b}}}}
-body{{background:var(--bg);color:var(--fg);font-family:"PingFang SC","Hiragino Sans GB",sans-serif;margin:0;padding:24px max(16px,env(safe-area-inset-left))}}
+body{{background:var(--bg);color:var(--fg);font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;margin:0;padding:24px max(16px,env(safe-area-inset-left))}}
 h1{{margin:0 0 4px}} .sub{{color:var(--mut);margin:0 0 12px}} .wrap{{overflow-x:auto}}
 table{{border-collapse:collapse;min-width:1100px;background:var(--card)}} td{{border-top:1px solid var(--line);padding:10px;vertical-align:top;font-size:14px}}
 img{{width:400px;height:auto;border-radius:6px;display:block}} .cap{{font-size:11px;color:var(--mut);margin-top:4px}}
@@ -171,8 +171,8 @@ img{{width:400px;height:auto;border-radius:6px;display:block}} .cap{{font-size:1
 {f"<div class=box><b>剪掉的部分</b><ul>{rm_html}</ul></div>" if removed else ""}
 <div class=wrap><table>{''.join(rows)}</table></div>
 <div class=box style="margin-top:16px"><b>请确认</b><ul><li>每句字幕是不是你说的话、有没有错字</li><li>贴图、花字、信息卡有没有挡脸，位置和内容合不合适</li><li>剪掉的停顿 / 重复对不对</li></ul>确认后才生成视频。</div>"""
-    open(os.path.join(a.out, "storyboard.html"), "w").write(page)
-    open(os.path.join(a.out, "storyboard.md"), "w").write("\n".join(md) + "\n")
+    open(os.path.join(a.out, "storyboard.html"), "w", encoding="utf-8").write(page)
+    open(os.path.join(a.out, "storyboard.md"), "w", encoding="utf-8").write("\n".join(md) + "\n")
     print("\n".join(md))
     print(f"\n分镜页：{os.path.join(a.out, 'storyboard.html')}（{len(rows)} 个片段，原速 {t:.1f}s，{speed:g} 倍速后 {t / speed:.1f}s）")
 

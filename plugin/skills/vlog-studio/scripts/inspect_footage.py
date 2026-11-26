@@ -50,10 +50,12 @@ def sheet(path, out_png, step, cols=6, width=320):
     first = Image.open(os.path.join(tmp, files[0])); w, h = first.size
     rows = math.ceil(len(files) / cols)
     out = Image.new("RGB", (cols * w, rows * h), "black"); d = ImageDraw.Draw(out)
-    try:
-        font = ImageFont.truetype("/System/Library/Fonts/Menlo.ttc", 16)
-    except OSError:
-        font = ImageFont.load_default()
+    font = ImageFont.load_default()
+    for p in ("/System/Library/Fonts/Menlo.ttc", "C:/Windows/Fonts/consola.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf"):
+        try:
+            font = ImageFont.truetype(p, 16); break
+        except OSError:
+            pass
     times = []
     for k, f in enumerate(files):
         x, y = (k % cols) * w, (k // cols) * h; t = k * step + step / 2   # fps 滤镜取的是每段中间的帧
@@ -101,7 +103,7 @@ def main():
         else:
             continue
         rows.append(d)
-    json.dump(rows, open(os.path.join(a.out, "footage.json"), "w"), ensure_ascii=False, indent=1)
+    json.dump(rows, open(os.path.join(a.out, "footage.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     for d in rows:
         print(json.dumps(d, ensure_ascii=False))
     print("\n总表每张左上角印了时间码。逐张看清每段几秒拍了什么。", file=sys.stderr)

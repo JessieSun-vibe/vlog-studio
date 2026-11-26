@@ -53,12 +53,26 @@
 ## 安装
 
 ### 电脑要求
-- **Mac（Apple 芯片，M1 及以后）**：全部功能可用（本地语音转写用 mlx-whisper）。
-- Windows / Intel Mac：剪辑和渲染部分可以跑，本地转写暂不支持（欢迎 PR）。
-- 需要先装好：[ffmpeg](https://ffmpeg.org/)（带 libvpx）、Python 3、[uv](https://docs.astral.sh/uv/)。其余依赖第一次使用时自动安装。
+| 电脑 | 能用吗 | 语音转写 |
+|---|---|---|
+| **Mac（Apple 芯片，M1 及以后）** | 全部功能 | mlx-whisper，最快 |
+| **Intel Mac** | 全部功能 | faster-whisper，用 CPU，会慢一些 |
+| **Windows / Linux** | 全部功能 | faster-whisper，有 NVIDIA 显卡自动加速，没有就用 CPU |
 
+转写引擎由脚本自动选择，输出完全一样，你不用管。
+
+需要先装好：[ffmpeg](https://ffmpeg.org/)（带 libvpx）、Python 3、[uv](https://docs.astral.sh/uv/)。其余依赖第一次使用时自动安装。
+
+Mac：
 ```bash
 brew install ffmpeg uv
+```
+Windows（PowerShell）：
+```powershell
+winget install Gyan.FFmpeg
+```
+```powershell
+winget install astral-sh.uv
 ```
 
 ### Claude Code（推荐）
@@ -83,6 +97,8 @@ git clone https://github.com/JessieSun-vibe/vlog-studio.git ~/vlog-studio
 ```bash
 mkdir -p ~/.codex/skills && ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
 ```
+
+Windows 上没有 `ln -s`，直接把 `plugin/skills/vlog-studio` 文件夹复制到 `%USERPROFILE%\.codex\skills\` 即可（更新后要重新复制）。
 
 其他工具把 `plugin/skills/vlog-studio` 放进它们的 skills 文件夹即可。更新时在 `~/vlog-studio` 里 `git pull`。
 
@@ -152,7 +168,7 @@ plugin/skills/vlog-studio/
 
 **vlog-studio** is an agent skill that turns your phone / camera footage into a share-ready lifestyle vlog (Xiaohongshu, Bilibili, TikTok style). Give your coding agent (Claude Code, Codex, …) a folder of clips and say "edit this into a vlog". It will:
 
-- inspect the footage and transcribe every voice (on-device, mlx-whisper on Apple Silicon);
+- inspect the footage and transcribe every voice (on-device: mlx-whisper on Apple Silicon, faster-whisper on Intel Macs, Windows and Linux, picked automatically);
 - write or clean up the voiceover: trim pauses, drop repeated takes and misspoken words, and re-transcribe to verify nothing was clipped;
 - mix in the natural reactions you said while filming;
 - build a timeline where picture follows the audio, with bilingual subtitles (exported as SRT), a corner badge, chapter tags, pop-up captions, info cards, picture-in-picture, animated Noto emoji stickers (optionally **tracking faces**), and event-based sound effects;
@@ -161,7 +177,7 @@ plugin/skills/vlog-studio/
 
 Three video types are supported: voiceover + B-roll, talking-head (to camera), and visuals-only.
 
-**Requirements:** macOS on Apple Silicon for the full pipeline; `ffmpeg` (with libvpx), Python 3 and `uv`.
+**Requirements:** `ffmpeg` (with libvpx), Python 3 and `uv` (`brew install ffmpeg uv` on macOS, `winget install Gyan.FFmpeg` and `winget install astral-sh.uv` on Windows). Apple Silicon Macs transcribe fastest; Intel Macs, Windows and Linux work too, using faster-whisper on CPU (or an NVIDIA GPU when available).
 
 **Install (Claude Code):**
 ```bash

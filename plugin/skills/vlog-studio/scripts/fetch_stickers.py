@@ -30,7 +30,7 @@ def main():
     dest, names = sys.argv[1], sys.argv[2:]
     os.makedirs(dest, exist_ok=True)
     rec_path = os.path.join(dest, "来源与状态.json")
-    recs = json.load(open(rec_path)) if os.path.exists(rec_path) else []
+    recs = json.load(open(rec_path, encoding="utf-8")) if os.path.exists(rec_path) else []
     have = {r["name"] for r in recs}
     for n in names:
         p = os.path.join(dest, f"{n}.webm")
@@ -42,10 +42,10 @@ def main():
                          "sha256": hashlib.sha256(open(p, "rb").read()).hexdigest(), "status": "downloaded_not_yet_user_approved",
                          "path": p})
         print(f"OK {n} {os.path.getsize(p) // 1024}KB")
-    json.dump(recs, open(rec_path, "w"), ensure_ascii=False, indent=2)
+    json.dump(recs, open(rec_path, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
     cred = os.path.join(dest, "CREDITS.md")
     if not os.path.exists(cred):
-        open(cred, "w").write("# 贴图署名\n\n动态表情贴图：Google Noto Emoji Animation（CC BY 4.0）\n"
+        open(cred, "w", encoding="utf-8").write("# 贴图署名\n\n动态表情贴图：Google Noto Emoji Animation（CC BY 4.0）\n"
                               "https://googlefonts.github.io/noto-emoji-animation/ · 文件来自 https://github.com/remotion-dev/animated-emoji\n")
 
 
