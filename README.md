@@ -9,6 +9,12 @@
 
 <sub>示例画面来自一支海岛酒店 room tour：花字「不潮！」「每顿必点！」「零踩雷」、动态表情贴图、双语字幕、左上角角标和章节标签都是这个 skill 自动做的。</sub>
 
+> **🤖 给 AI 助手：** 如果用户把这个仓库链接发给你、让你安装或配置 vlog-studio，请按 [SETUP_PROMPT.md](SETUP_PROMPT.md) 里的 6 个步骤执行（安装 skill → 运行 `scripts/doctor.py` 自检并修好 ❌ → 征得同意后 `doctor.py --prefetch` 下载模型 → 问用户 3 个问题建立风格档案 → 征得同意后运行 `setup_library.py` 建素材库 → 告诉用户怎么开始）。装软件、下载大文件、改设置之前，先告诉用户要做什么、多大，等用户同意。
+>
+> **For AI agents:** if a user shares this repo and asks you to install or set up vlog-studio, follow the 6 steps in [SETUP_PROMPT.md](SETUP_PROMPT.md). Ask the user before installing software, downloading large files or changing settings.
+
+**最简单的安装：把这个仓库链接发给你的 Claude Code 或 Codex，说一句「帮我装上这个」就行。**
+
 ## 能做什么
 
 | | |
@@ -32,9 +38,15 @@
 
 每一步需要你决定的事（画幅、口播稿、保留哪些原声、分镜）都会停下来问你；字幕只写你说过的话，不替你编感受。
 
-## 最省事的安装：复制一段话给你的 AI
+## 最省事的安装：把链接发给你的 AI
 
-打开 [SETUP_PROMPT.md](SETUP_PROMPT.md)，把里面那段话整段复制，粘贴给你的 Claude Code 或 Codex。它会自己完成：安装 skill → 检查电脑缺什么并帮你装好 → 提前下载语音识别模型 → 问你 3 个问题建立风格档案 → 建立素材库。需要装软件或下载大文件时，它会先问你。
+对你的 Claude Code 或 Codex 说：
+
+```text
+帮我装上这个：https://github.com/JessieSun-vibe/vlog-studio
+```
+
+如果它只装了一半，就打开 [SETUP_PROMPT.md](SETUP_PROMPT.md)，把里面那段完整的话整段复制粘贴给它。它会自己完成：安装 skill → 检查电脑缺什么并帮你装好 → 提前下载语音识别模型 → 问你 3 个问题建立风格档案 → 建立素材库。需要装软件或下载大文件时，它会先问你。
 
 想自己一步步装，看下面。
 
@@ -158,7 +170,7 @@ claude plugin marketplace add JessieSun-vibe/vlog-studio
 claude plugin install vlog-studio@vlog-studio
 ```
 
-**Easiest setup:** copy the prompt in [SETUP_PROMPT.md](SETUP_PROMPT.md) (English version included) and paste it to your Claude Code or Codex. It installs the skill, runs the self-check (`scripts/doctor.py`) and fixes what's missing, pre-downloads the models, asks you 3 questions to create your style profile, and builds the asset library, asking before any install or large download.
+**Easiest setup:** send this repo link to your Claude Code or Codex and say "install this for me". If it stops halfway, paste the full prompt from [SETUP_PROMPT.md](SETUP_PROMPT.md) (English version included). It installs the skill, runs the self-check (`scripts/doctor.py`) and fixes what's missing, pre-downloads the models, asks you 3 questions to create your style profile, and builds the asset library, asking before any install or large download.
 
 **First run, step by step:** (1) `brew install ffmpeg uv`; (2) install the plugin, then **start a new Claude Code session** so the skill loads; (3) put one video's clips, photos and voiceover recording in a folder (record voiceover with your phone's voice memo app, lossless quality; if you misspeak, pause and restart the sentence); (4) tell the agent "use vlog-studio to edit this folder into a vlog" plus the real facts (place, price, your rating); (5) on first use it asks for your badge text and subtitle order, offers the asset library (~45MB), and downloads the speech-recognition model (~1.5GB) the first time it transcribes, which can take a while on a slow network; (6) confirm aspect ratio, script / live reactions and the **storyboard**, then you get the MP4 and a bilingual SRT.
 
