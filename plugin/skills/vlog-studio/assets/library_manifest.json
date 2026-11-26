@@ -1,0 +1,1162 @@
+{
+ "version": 1,
+ "stickers": [
+  {
+   "category": "动物",
+   "name": "bird",
+   "meaning": "小鸟｜早晨、自然",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/bird-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "blowfish",
+   "meaning": "河豚｜鱼、浮潜、好笑",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/blowfish-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "butterfly",
+   "meaning": "蝴蝶｜花园、自然",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/butterfly-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "crab",
+   "meaning": "螃蟹｜海鲜、沙滩",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/crab-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "dog",
+   "meaning": "小狗｜狗狗、狗子",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/dog-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "dolphin",
+   "meaning": "海豚｜出海、海洋",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/dolphin-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "monkey",
+   "meaning": "猴子｜猴子景点、调皮",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/monkey-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "poodle",
+   "meaning": "贵宾犬｜狗狗",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/poodle-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "smile-cat",
+   "meaning": "微笑猫｜猫咪",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/smile-cat-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "turtle",
+   "meaning": "海龟｜浮潜、海洋",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/turtle-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "动物",
+   "name": "whale",
+   "meaning": "鲸鱼｜出海、海洋",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/whale-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "birthday-cake",
+   "meaning": "蛋糕｜生日、甜品",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/birthday-cake-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "bottle-with-popping-cork",
+   "meaning": "开香槟｜庆祝、好消息",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/bottle-with-popping-cork-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "clinking-beer-mugs",
+   "meaning": "碰啤酒｜聚会、夜宵",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/clinking-beer-mugs-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "clinking-glasses",
+   "meaning": "碰杯（香槟）｜庆祝、干杯、婚礼",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/clinking-glasses-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "cooking",
+   "meaning": "煎蛋锅｜做饭、早餐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/cooking-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "drool",
+   "meaning": "流口水｜馋、想吃",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/drool-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "hot-beverage",
+   "meaning": "热饮｜咖啡、茶、早餐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/hot-beverage-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "popcorn",
+   "meaning": "爆米花｜看戏、吃瓜、电影",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/popcorn-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "spaghetti",
+   "meaning": "意面｜西餐、面条",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/spaghetti-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "steaming-bowl",
+   "meaning": "热汤面｜面、汤、亚洲美食",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/steaming-bowl-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "tropical-drink",
+   "meaning": "热带饮料｜果昔、椰子水、鸡尾酒",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/tropical-drink-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "wine-glass",
+   "meaning": "红酒｜晚餐、约会",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/wine-glass-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "吃喝",
+   "name": "yum",
+   "meaning": "好吃（舔嘴）｜美食好吃",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/yum-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "cloud-with-lightning",
+   "meaning": "雷雨｜坏天气、糟糕",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/cloud-with-lightning-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "leaves",
+   "meaning": "树叶飘｜风、自然、秋天",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/leaves-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "rain-cloud",
+   "meaning": "雨云｜下雨",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/rain-cloud-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "snowflake",
+   "meaning": "雪花｜冷、空调",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/snowflake-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "sun-with-face",
+   "meaning": "笑脸太阳｜晴天、好天气、海边",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sun-with-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "天气",
+   "name": "tornado",
+   "meaning": "龙卷风｜忙乱、风大",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/tornado-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "blush",
+   "meaning": "害羞微笑｜开心、不好意思",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/blush-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "eyes",
+   "meaning": "眼睛｜盯、看这里、偷看",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/eyes-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "flushed",
+   "meaning": "脸红瞪眼｜不好意思、震惊",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/flushed-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "grimacing",
+   "meaning": "尴尬龇牙｜尴尬、翻车",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/grimacing-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "happy-cry",
+   "meaning": "开心到流泪｜感动又开心",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/happy-cry-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "hear-no-evil-monkey",
+   "meaning": "捂耳朵猴｜吵、噪音、不想听",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/hear-no-evil-monkey-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "heart-eyes",
+   "meaning": "星星眼爱心｜好喜欢、心动",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/heart-eyes-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "holding-back-tears",
+   "meaning": "忍住眼泪｜感动、破防",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/holding-back-tears-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "hug-face",
+   "meaning": "抱抱｜温暖、谢谢",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/hug-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "joy",
+   "meaning": "笑哭｜好好笑",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/joy-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "laughing",
+   "meaning": "哈哈大笑｜开心",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/laughing-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "loudly-crying",
+   "meaning": "大哭｜哭了、被弹哭了、太感动",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/loudly-crying-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "melting",
+   "meaning": "融化｜好热、被可爱化了",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/melting-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "mind-blown",
+   "meaning": "脑袋炸开｜震惊、没想到",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/mind-blown-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "money-face",
+   "meaning": "钱眼｜价格、便宜、性价比",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/money-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "partying-face",
+   "meaning": "派对脸｜开心、开启、庆祝",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/partying-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "pleading",
+   "meaning": "可怜巴巴｜求求了、拜托",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/pleading-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "raised-eyebrow",
+   "meaning": "挑眉｜怀疑、真的吗",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/raised-eyebrow-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "rofl",
+   "meaning": "笑到打滚｜爆笑",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/rofl-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "screaming",
+   "meaning": "尖叫｜吓一跳、太夸张",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/screaming-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "see-no-evil-monkey",
+   "meaning": "捂眼猴｜害羞、不敢看",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/see-no-evil-monkey-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "shushing-face",
+   "meaning": "嘘｜小秘密、小声说",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/shushing-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "sleep",
+   "meaning": "睡觉 Zzz｜睡着、躺平",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sleep-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "star-struck",
+   "meaning": "崇拜星星眼｜惊艳、太棒了、高分",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/star-struck-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "sunglasses-face",
+   "meaning": "墨镜脸｜酷、轻松、晒太阳",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sunglasses-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "thinking-face",
+   "meaning": "思考｜疑问、到底…？",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/thinking-face-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "wink",
+   "meaning": "眨眼｜俏皮、你懂的",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/wink-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "woozy",
+   "meaning": "晕乎乎｜喝醉、累晕",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/woozy-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "情绪反应",
+   "name": "yawn",
+   "meaning": "打哈欠｜困、早起",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/yawn-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "clap",
+   "meaning": "鼓掌｜好棒、恭喜",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/clap-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "folded-hands",
+   "meaning": "双手合十｜感谢、拜托",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/folded-hands-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "muscle",
+   "meaning": "肌肉｜加油、健身",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/muscle-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "raising-hands",
+   "meaning": "举双手｜欢呼、太好了",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/raising-hands-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "thumbs-up",
+   "meaning": "点赞｜好评、推荐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/thumbs-up-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "victory",
+   "meaning": "比耶｜开心、拍照",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/victory-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "手势",
+   "name": "wave",
+   "meaning": "挥手｜你好、再见",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/wave-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "airplane-arrival",
+   "meaning": "飞机降落｜到达、落地",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/airplane-arrival-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "airplane-departure",
+   "meaning": "飞机起飞｜出发、去机场、开始旅行",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/airplane-departure-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "camping",
+   "meaning": "露营｜帐篷、户外、glamping",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/camping-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "footprints",
+   "meaning": "脚印｜散步、打卡、一路走来",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/footprints-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "globe-showing-asia-australia",
+   "meaning": "地球（亚洲）｜出国、东南亚、亚洲旅行",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/globe-showing-asia-australia-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "ocean",
+   "meaning": "海浪｜海边、看海、冲浪",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/ocean-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "rainbow",
+   "meaning": "彩虹｜心情好、雨后、惊喜",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/rainbow-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "sunrise-over-mountains",
+   "meaning": "山间日出｜爬山、早晨风景",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sunrise-over-mountains-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "sunrise",
+   "meaning": "海上日出｜早起、日出、清晨",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sunrise-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "umbrella",
+   "meaning": "雨伞｜下雨、遮阳",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/umbrella-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "旅行地点",
+   "name": "volcano",
+   "meaning": "火山｜火山景点、生气爆炸",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/volcano-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "100",
+   "meaning": "100 分｜满分、超推荐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/100-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "bell",
+   "meaning": "铃铛｜提醒、叮",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/bell-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "bubbles",
+   "meaning": "泡泡｜洗澡、淋浴、水、干净",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/bubbles-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "camera-flash",
+   "meaning": "相机闪光｜拍照、照片出现",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/camera-flash-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "check-mark",
+   "meaning": "打勾｜可以、推荐、做到了",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/check-mark-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "collision",
+   "meaning": "砰｜冲击、惊讶",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/collision-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "cross-mark",
+   "meaning": "打叉｜不行、踩雷、不推荐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/cross-mark-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "exclamation",
+   "meaning": "感叹号｜注意、重点",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/exclamation-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "fire",
+   "meaning": "火｜火爆、超赞、热门",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/fire-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "glowing-star",
+   "meaning": "发光星星｜重点、推荐",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/glowing-star-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "light-bulb",
+   "meaning": "灯泡｜小技巧、灵感",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/light-bulb-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "musical-notes",
+   "meaning": "音符｜音乐、唱歌、现场演出",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/musical-notes-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "pencil",
+   "meaning": "铅笔｜标注、笔记、攻略",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/pencil-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "question",
+   "meaning": "问号｜疑问",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/question-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "点缀",
+   "name": "sparkles",
+   "meaning": "星光闪闪｜好看、亮点、精致",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sparkles-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "balloon",
+   "meaning": "气球｜派对、生日",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/balloon-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "confetti-ball",
+   "meaning": "彩球｜庆祝、恭喜",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/confetti-ball-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "cupid",
+   "meaning": "丘比特之箭｜一见钟情、婚礼",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/cupid-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "fireworks",
+   "meaning": "烟花｜庆祝、高潮时刻、婚礼",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/fireworks-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "gift-heart",
+   "meaning": "爱心礼盒｜心意、礼物",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/gift-heart-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "heart-grow",
+   "meaning": "变大的心｜越来越喜欢",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/heart-grow-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "kissing-heart",
+   "meaning": "飞吻｜爱你、么么哒",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/kissing-heart-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "light-blue-heart",
+   "meaning": "浅蓝爱心｜清新、海边的爱",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/light-blue-heart-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "love-letter",
+   "meaning": "情书｜邀请函、婚礼邀请、来信",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/love-letter-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "party-popper",
+   "meaning": "礼花｜庆祝、成功、好消息",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/party-popper-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "red-heart",
+   "meaning": "红心｜爱、喜欢",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/red-heart-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "revolving-hearts",
+   "meaning": "旋转爱心｜甜蜜、恋爱",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/revolving-hearts-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "rose",
+   "meaning": "玫瑰｜浪漫、约会",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/rose-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "sparkling-heart",
+   "meaning": "闪亮爱心｜心动、超喜欢",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/sparkling-heart-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "two-hearts",
+   "meaning": "两颗心｜两个人、情侣",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/two-hearts-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "爱心婚礼",
+   "name": "wrapped-gift",
+   "meaning": "礼物｜送礼、惊喜",
+   "kind": "webm",
+   "url": "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/wrapped-gift-1x.webm",
+   "license": "CC BY 4.0 · Google Noto Emoji Animation"
+  },
+  {
+   "category": "静态图标",
+   "name": "冲浪",
+   "meaning": "冲浪｜海上运动",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f3c4.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "地图",
+   "meaning": "地图｜路线、位置、目的地",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f5fa.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "婚礼教堂",
+   "meaning": "婚礼教堂｜婚礼、仪式",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f492.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "定位",
+   "meaning": "定位图钉｜地点、打卡",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f4cd.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "情书信封",
+   "meaning": "爱心信封｜婚礼邀请、请柬",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f48c.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "戒指",
+   "meaning": "戒指｜求婚、婚礼",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f48d.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "护照",
+   "meaning": "护照｜出国、签证",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f6c2.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "捧花",
+   "meaning": "捧花｜婚礼、花",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f490.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "新娘",
+   "meaning": "新娘｜婚纱、婚礼",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f470.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "日历",
+   "meaning": "日历｜日期、行程",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f4c5.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "棕榈树",
+   "meaning": "棕榈树｜海岛、度假",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f334.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "椰子",
+   "meaning": "椰子｜热带、饮料",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f965.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "沙滩伞",
+   "meaning": "沙滩伞｜海边、沙滩",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f3d6.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "海岛",
+   "meaning": "海岛｜海岛游、度假",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f3dd.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "相机",
+   "meaning": "相机｜拍照",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f4f7.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "行李箱",
+   "meaning": "行李箱｜出发、旅行",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f9f3.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "西装",
+   "meaning": "西装｜新郎、正式",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f935.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "酒店",
+   "meaning": "酒店｜住宿、入住",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f3e8.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "香槟杯",
+   "meaning": "碰杯｜庆祝、婚宴",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f942.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  },
+  {
+   "category": "静态图标",
+   "name": "鱼",
+   "meaning": "鱼｜抓鱼、海鲜、浮潜",
+   "kind": "svg",
+   "url": "https://raw.githubusercontent.com/googlefonts/noto-emoji/main/2D/svg/emoji_u1f41f.svg",
+   "license": "Apache-2.0 · Google Noto Emoji"
+  }
+ ],
+ "fonts": [
+  {
+   "name": "LongCang-Regular",
+   "meaning": "龙藏体｜手写感小字、手帐批注",
+   "url": "https://github.com/google/fonts/raw/main/ofl/longcang/LongCang-Regular.ttf",
+   "license_url": "https://github.com/google/fonts/raw/main/ofl/longcang/OFL.txt",
+   "license": "SIL Open Font License 1.1"
+  },
+  {
+   "name": "ZCOOLKuaiLe-Regular",
+   "meaning": "站酷快乐体｜花字、角标、章节标签（默认）",
+   "url": "https://github.com/google/fonts/raw/main/ofl/zcoolkuaile/ZCOOLKuaiLe-Regular.ttf",
+   "license_url": "https://github.com/google/fonts/raw/main/ofl/zcoolkuaile/OFL.txt",
+   "license": "SIL Open Font License 1.1"
+  },
+  {
+   "name": "ZCOOLQingKeHuangYou-Regular",
+   "meaning": "站酷庆科黄油体｜更粗更圆的花字、封面大标题",
+   "url": "https://github.com/google/fonts/raw/main/ofl/zcoolqingkehuangyou/ZCOOLQingKeHuangYou-Regular.ttf",
+   "license_url": "https://github.com/google/fonts/raw/main/ofl/zcoolqingkehuangyou/OFL.txt",
+   "license": "SIL Open Font License 1.1"
+  }
+ ],
+ "sfx": [
+  {
+   "name": "切换-switch",
+   "meaning": "换章节、换场景",
+   "file": "切换-switch.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "叮-ding",
+   "meaning": "惊喜、发现、价格揭晓",
+   "file": "叮-ding.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "叮-低-bell",
+   "meaning": "温柔提示、结尾",
+   "file": "叮-低-bell.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "啵-pop",
+   "meaning": "花字、贴图弹出",
+   "file": "啵-pop.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "啵-高-pop-high",
+   "meaning": "小贴图、小字弹出",
+   "file": "啵-高-pop-high.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "嗖-whoosh",
+   "meaning": "转场、镜头飞过",
+   "file": "嗖-whoosh.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "嗖-短-swoosh",
+   "meaning": "快速转场、贴图飞入",
+   "file": "嗖-短-swoosh.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "失败-oops",
+   "meaning": "翻车、踩雷、小缺点",
+   "file": "失败-oops.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "弹簧-boing",
+   "meaning": "搞笑、跳出来、意外",
+   "file": "弹簧-boing.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "心跳-heartbeat",
+   "meaning": "紧张、心动、期待",
+   "file": "心跳-heartbeat.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "快门-shutter",
+   "meaning": "拍照、照片出现",
+   "file": "快门-shutter.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "成功-success",
+   "meaning": "做到了、推荐、打勾",
+   "file": "成功-success.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "打字-typing",
+   "meaning": "文字逐字出现、标题",
+   "file": "打字-typing.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "揭晓-tada",
+   "meaning": "揭晓、打分、高光",
+   "file": "揭晓-tada.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "星光-sparkle",
+   "meaning": "好看、闪亮、魔法时刻",
+   "file": "星光-sparkle.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "泡泡-bubble",
+   "meaning": "水、洗澡、可爱",
+   "file": "泡泡-bubble.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "点击-click",
+   "meaning": "按钮、轻提示",
+   "file": "点击-click.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  },
+  {
+   "name": "翻页-page",
+   "meaning": "换章节、翻篇",
+   "file": "翻页-page.wav",
+   "license": "原创合成（assets/sfx/生成音效.py），可自由使用"
+  }
+ ]
+}

@@ -76,18 +76,30 @@ ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
 
 **第一次使用**时，它会问你几个风格偏好（角标文字、字幕中英顺序、有没有自己的字体 / 音效 / 贴图），存成你自己的风格档案 `~/.claude/vlog-studio/style.json`，以后每支片子都沿用。
 
-### 素材库（贴图、音效、字体）
-仓库里不带素材。建议建一个自己的素材库，在风格档案里指向它：
-- **动态贴图**：`scripts/fetch_stickers.py` 可下载 Google Noto 动态表情（CC BY 4.0，发布时注明出处）。
-- **字体**：推荐 Google Fonts 上可商用的中文字体，如站酷快乐体（花字）、龙藏体（手写感）。
-- **音效**：用自己有授权的音效；不要直接从别人的成片里截取。
+### 素材库（贴图、音效、字体）：一键建立
+第一次使用时，AI 会问你要不要建立素材库。同意后它会自动准备好：
+
+| | |
+|---|---|
+| **字体 3 款** | 站酷快乐体（花字、角标）、站酷庆科黄油体（封面大标题）、龙藏体（手写小字），均可商用（OFL） |
+| **贴图 128 个** | Google Noto 动态表情 + 静态图标，按用途分好：旅行地点、吃喝、情绪反应、爱心婚礼、点缀、手势、动物、天气、静态图标 |
+| **音效 18 个** | 啵、叮、星光、揭晓、成功、翻车、切换、翻页、快门、嗖、泡泡、弹簧、心跳……原创合成，随 skill 附带 |
+| **素材清单** | 每个素材都写了适合什么场景（如「钱眼脸｜价格、性价比」），剪片时 AI 按你说的内容挑 |
+| **预览页** | 用 Chrome 打开 `素材预览.html`：贴图会动、音效能试听、字体有示例 |
+
+也可以自己手动运行（约 45MB，从 Google 官方源下载，断网可以续传）：
+```bash
+python3 plugin/skills/vlog-studio/scripts/setup_library.py ~/vlog素材库 --update-style ~/.claude/vlog-studio/style.json
+```
+想换成自己的字体、贴纸、音效，放进素材库、改风格档案就行。发布视频时记得附上 `CREDITS.md` 里的贴图署名。
 
 ## 文件结构
 
 ```
 plugin/skills/vlog-studio/
 ├── SKILL.md                 流程说明（AI 读这个）
-├── scripts/                 看素材、转写、清理人声、人脸跟踪、分镜、渲染、变速、下载贴图
+├── scripts/                 看素材、转写、清理人声、人脸跟踪、分镜、渲染、变速、建素材库、下载贴图
+├── assets/                  附带的 18 个原创音效、素材库清单
 ├── references/              时间线格式、三种视频类型、踩过的坑
 └── styles/                  风格档案模板和字段说明
 ```
@@ -127,6 +139,6 @@ claude plugin install vlog-studio@vlog-studio
 
 **Install (Codex / other SKILL.md agents):** clone this repo and link `plugin/skills/vlog-studio` into your agent's skills folder (e.g. `~/.codex/skills/`).
 
-On first use the agent asks for your style preferences (badge text, subtitle order, your own fonts / stickers / SFX) and saves them to `~/.claude/vlog-studio/style.json`. No stickers, fonts or sounds are bundled; `scripts/fetch_stickers.py` downloads Google Noto animated emoji (CC BY 4.0 — credit them when you publish).
+On first use the agent asks for your style preferences (badge text, subtitle order, your own fonts / stickers / SFX) and saves them to `~/.claude/vlog-studio/style.json`. It also offers a one-click asset library (`scripts/setup_library.py`): 3 free commercial-use Chinese fonts (OFL), 128 Google Noto animated / static emoji stickers sorted by use (CC BY 4.0 / Apache-2.0 — credit them when you publish), 18 original sound effects bundled with the skill, a catalog describing when to use each asset, and a preview page.
 
 License: MIT for code and docs; third-party assets keep their own licenses.
