@@ -10,6 +10,7 @@
 import json, os, platform, shutil, subprocess, sys
 
 OK, WARN, BAD = "✅", "⚠️", "❌"
+HERE = os.path.dirname(os.path.abspath(__file__))
 rows, must_fix = [], False
 
 
@@ -38,12 +39,18 @@ def check():
     else:
         say(WARN, "电脑", f"{platform.system()}：只在 Apple 芯片 Mac 上完整测试过，本地转写不可用", "")
     brew = shutil.which("brew")
-    if mac and not brew:
-        say(WARN, "Homebrew", "没装（用来装 ffmpeg / uv）",
-            '请用户自己在终端运行（要输入电脑密码，AI 不要代为运行）：/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"')
+    brew_bin = next((b for b in ("/opt/homebrew/bin/brew", "/usr/local/bin/brew") if os.path.exists(b)), None)
+    need_brew = not (shutil.which("ffmpeg") and shutil.which("uv"))
+    if mac and not brew and brew_bin:
+        say(BAD if need_brew else WARN, "Homebrew", f"装了（{brew_bin}），但当前终端找不到 brew 命令",
+            f'eval "$({brew_bin} shellenv)"   并写进 ~/.zprofile 以后都生效：echo \'eval "$({brew_bin} shellenv)"\' >> ~/.zprofile')
+    elif mac and not brew:
+        say(BAD if need_brew else WARN, "Homebrew", "没装（装 ffmpeg / uv 要用它；安装时会顺带装好 Xcode 命令行工具，约 1–2GB）",
+            '请用户自己在「终端」App 里运行（要输入电脑密码，AI 不要代为运行）：/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"'
+            '；装完再运行它最后提示的两行（通常是 echo \'eval "$(/opt/homebrew/bin/brew shellenv)"\' >> ~/.zprofile 和 eval "$(/opt/homebrew/bin/brew shellenv)"）')
     ff = shutil.which("ffmpeg")
     if not ff:
-        say(BAD, "ffmpeg", "没装", "brew install ffmpeg")
+        say(BAD, "ffmpeg", "没装", "brew install ffmpeg（连依赖几百 MB）")
     else:
         _, v = run(["ffmpeg", "-version"]); ver = (v.split()[2] if len(v.split()) > 2 else "?")
         _, dec = run(["ffmpeg", "-hide_banner", "-decoders"])
@@ -59,8 +66,8 @@ def check():
     if shutil.which("uv"):
         _, v = run(["uv", "--version"]); say(OK, "uv", v.strip())
     else:
-        say(BAD, "uv", "没装（用来自动装 Python 依赖）", "brew install uv")
-    say(OK, "Python", f"{platform.python_version()}（脚本由 uv 用自己的 Python 运行，系统版本不要紧）")
+        say(BAD, "uv", "没装（用来自动装 Python 依赖）", "brew install uv（约 30MB）")
+    say(OK, "Python", f"{platform.python_version()}（剪片脚本由 uv 用自己的 Python 运行，系统版本不要紧）")
     style = os.path.expanduser("~/.claude/vlog-studio/style.json")
     if os.path.exists(style):
         st = json.load(open(style)); lib = st.get("library")
@@ -68,12 +75,12 @@ def check():
         if lib and os.path.isdir(lib):
             say(OK, "素材库", lib)
         else:
-            say(WARN, "素材库", "还没建", "python3 scripts/setup_library.py <素材库文件夹> --update-style ~/.claude/vlog-studio/style.json")
+            say(WARN, "素材库", "还没建", f'python3 "{HERE}/setup_library.py" <素材库文件夹> --update-style ~/.claude/vlog-studio/style.json')
     else:
         say(WARN, "风格档案", "还没有（第一次剪片时 AI 会问你几个问题再建）", "")
     hf = os.path.expanduser("~/.cache/huggingface/hub/models--mlx-community--whisper-large-v3-turbo")
     say(OK if os.path.isdir(hf) else WARN, "语音识别模型", "已下载" if os.path.isdir(hf) else "还没下载（约 1.5GB，第一次转写时自动下）",
-        "" if os.path.isdir(hf) else "python3 scripts/doctor.py --prefetch")
+        "" if os.path.isdir(hf) else f'python3 "{HERE}/doctor.py" --prefetch（共约 2GB：模型 1.5GB + 依赖 0.5GB）')
 
 
 def prefetch():

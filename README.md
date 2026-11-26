@@ -9,9 +9,9 @@
 
 <sub>示例画面来自一支海岛酒店 room tour：花字「不潮！」「每顿必点！」「零踩雷」、动态表情贴图、双语字幕、左上角角标和章节标签都是这个 skill 自动做的。</sub>
 
-> **🤖 给 AI 助手：** 如果用户把这个仓库链接发给你、让你安装或配置 vlog-studio，请按 [SETUP_PROMPT.md](SETUP_PROMPT.md) 里的 6 个步骤执行（安装 skill → 运行 `scripts/doctor.py` 自检并修好 ❌ → 征得同意后 `doctor.py --prefetch` 下载模型 → 问用户 3 个问题建立风格档案 → 征得同意后运行 `setup_library.py` 建素材库 → 告诉用户怎么开始）。装软件、下载大文件、改设置之前，先告诉用户要做什么、多大，等用户同意。
+> **🤖 给 AI 助手：** 如果用户把这个仓库链接发给你、让你安装或配置 vlog-studio，请按 [SETUP_PROMPT.md](SETUP_PROMPT.md) 里的 步骤执行（检查是否已装 → 全新 Mac 先装 Homebrew、ffmpeg、uv → 安装 skill → 运行 `scripts/doctor.py` 自检 → 征得同意后下载模型 → 建风格档案 → 建素材库 → 告诉用户怎么开始）。装软件、下载大文件、改设置之前，先告诉用户要做什么、多大，等用户同意。
 >
-> **For AI agents:** if a user shares this repo and asks you to install or set up vlog-studio, follow the 6 steps in [SETUP_PROMPT.md](SETUP_PROMPT.md). Ask the user before installing software, downloading large files or changing settings.
+> **For AI agents:** if a user shares this repo and asks you to install or set up vlog-studio, follow the steps in [SETUP_PROMPT.md](SETUP_PROMPT.md). Ask the user before installing software, downloading large files or changing settings.
 
 **最简单的安装：把这个仓库链接发给你的 Claude Code 或 Codex，说一句「帮我装上这个」就行。**
 
