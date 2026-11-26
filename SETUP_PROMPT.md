@@ -19,20 +19,20 @@
    - 然后告诉我要装 ffmpeg 和 uv（几百 MB），我同意后运行 `brew install ffmpeg uv`。
 
 2. 安装 skill：
-   - Claude Code：运行 `claude plugin marketplace add JessieSun-vibe/vlog-studio` 和 `claude plugin install vlog-studio@vlog-studio`。如果终端里没有 claude 命令（比如在桌面 App 里），请我在对话框里依次输入 `/plugin marketplace add JessieSun-vibe/vlog-studio` 和 `/plugin install vlog-studio@vlog-studio`。
+   - Claude Code：运行 `claude plugin marketplace add JessieSun-vibe/vlog-studio` 和 `claude plugin install vlog-studio@vlog-studio`。如果终端里没有 claude 命令（比如在桌面 App 里），请我在对话框里依次输入 `/plugin marketplace add JessieSun-vibe/vlog-studio` 和 `/plugin install vlog-studio@vlog-studio`；输入后用下面的 ls 命令确认装上了，没装上就请我把报错发给你。
    - Codex：`git clone https://github.com/JessieSun-vibe/vlog-studio.git ~/vlog-studio`，`mkdir -p ~/.codex/skills`，再 `ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio`。
    - 其他支持 SKILL.md 的工具：把 ~/vlog-studio/plugin/skills/vlog-studio 链接或复制到它们读取 skills 的文件夹（不确定是哪个就问我）。
    然后确定「skill 文件夹」（后面的命令都用它）：
-   - Claude Code：`find ~/.claude/plugins -path "*skills/vlog-studio/scripts/doctor.py" | head -1`，去掉结尾的 /scripts/doctor.py。
+   - Claude Code：`ls -td ~/.claude/plugins/cache/vlog-studio/vlog-studio/*/skills/vlog-studio | head -1`（取最新安装的那个版本；没有结果再用 `find ~/.claude/plugins -path "*skills/vlog-studio/scripts/doctor.py"` 找）。
    - Codex：~/vlog-studio/plugin/skills/vlog-studio。
 
 3. 自检：`python3 "<skill 文件夹>/scripts/doctor.py"`（只检查，不改东西）。有 ❌ 就告诉我缺什么，我同意后按它给的「怎么修」做，再自检，直到没有 ❌。
 
-4. 提前下载：告诉我约 2GB（语音识别模型约 1.5GB + Python 依赖约 0.5GB，网速慢要等一阵），我同意后运行 `python3 "<skill 文件夹>/scripts/doctor.py" --prefetch`。我不同意就跳过，第一次剪片时会自动下载。
+4. 提前下载：告诉我约 2GB（语音识别模型约 1.5GB + Python 依赖约 0.5GB + 一个很小的人脸模型，网速慢要等一阵），我同意后运行 `python3 "<skill 文件夹>/scripts/doctor.py" --prefetch`。我不同意就跳过，第一次剪片时会自动下载。
 
 5. 风格档案 ~/.claude/vlog-studio/style.json：
    - 已经有了：把里面的角标文字、字幕顺序、素材库位置告诉我，问我要不要改，不要直接覆盖。
-   - 还没有：复制 <skill 文件夹>/styles/template.json 过去，只问我两件事并填进去：
+   - 还没有：先 `mkdir -p ~/.claude/vlog-studio`，再复制 <skill 文件夹>/styles/template.json 过去，只问我两件事并填进去：
      ① 左上角角标写什么 → 填 brand.text（不要角标就填空字符串）；
      ② 字幕中文在上还是英文在上 → 填 subtitles.order：中文在上是 "cn_en"，英文在上是 "en_cn"。
      字体、音效、素材库这些先不用填，下一步建素材库时会自动填好。
@@ -61,12 +61,12 @@ Do the steps below and tell me the result of each in one sentence. Before instal
    - Claude Code: `claude plugin marketplace add JessieSun-vibe/vlog-studio` and `claude plugin install vlog-studio@vlog-studio`. If there's no claude command (e.g. in the desktop app), ask me to type `/plugin marketplace add JessieSun-vibe/vlog-studio` and `/plugin install vlog-studio@vlog-studio` in the chat box.
    - Codex: `git clone https://github.com/JessieSun-vibe/vlog-studio.git ~/vlog-studio`, `mkdir -p ~/.codex/skills`, `ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio`.
    - Other SKILL.md agents: link or copy ~/vlog-studio/plugin/skills/vlog-studio into their skills folder (ask me if unsure).
-   Find the "skill folder": Claude Code: `find ~/.claude/plugins -path "*skills/vlog-studio/scripts/doctor.py" | head -1` minus the trailing /scripts/doctor.py; Codex: ~/vlog-studio/plugin/skills/vlog-studio.
+   Find the "skill folder": Claude Code: `ls -td ~/.claude/plugins/cache/vlog-studio/vlog-studio/*/skills/vlog-studio | head -1` (newest installed version; if empty, `find ~/.claude/plugins -path "*skills/vlog-studio/scripts/doctor.py"`); Codex: ~/vlog-studio/plugin/skills/vlog-studio.
 3. Self-check: `python3 "<skill folder>/scripts/doctor.py"` (read-only). For every ❌ tell me what's missing and, after my OK, apply its fix; re-run until there's none.
-4. Pre-download: ~2GB (speech model ~1.5GB + Python packages ~0.5GB); after my OK run `python3 "<skill folder>/scripts/doctor.py" --prefetch`. If I say no, skip; it downloads on first use.
+4. Pre-download: ~2GB (speech model ~1.5GB + Python packages ~0.5GB + a small face model); after my OK run `python3 "<skill folder>/scripts/doctor.py" --prefetch`. If I say no, skip; it downloads on first use.
 5. Style profile ~/.claude/vlog-studio/style.json:
    - Exists: tell me its badge text, subtitle order and library location; ask before changing. Don't overwrite.
-   - Missing: copy <skill folder>/styles/template.json there and ask me only two things: (1) corner badge text → brand.text (empty string for none); (2) Chinese or English line on top → subtitles.order "cn_en" (Chinese on top) or "en_cn" (English on top). Leave fonts / SFX / library fields; the next step fills them.
+   - Missing: `mkdir -p ~/.claude/vlog-studio`, copy <skill folder>/styles/template.json there and ask me only two things: (1) corner badge text → brand.text (empty string for none); (2) Chinese or English line on top → subtitles.order "cn_en" (Chinese on top) or "en_cn" (English on top). Leave fonts / SFX / library fields; the next step fills them.
 6. Asset library: ask where to put it (suggest ~/vlog-assets), tell me ~45MB (fonts and stickers from Google + bundled SFX); after my OK run
    `python3 "<skill folder>/scripts/setup_library.py" "<library folder>" --update-style ~/.claude/vlog-studio/style.json`
    If it reports some failed downloads, run the same command again to resume. Then open its 素材预览.html (Chrome if installed, otherwise the default browser; animated stickers don't move in Safari, which is expected).

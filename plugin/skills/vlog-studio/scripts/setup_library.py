@@ -16,7 +16,8 @@ MANIFEST = os.path.join(SKILL, "assets", "library_manifest.json")
 SFX_KEYS = {"chapter": "切换-switch", "page": "翻页-page", "photo": "快门-shutter", "pop": "啵-pop", "ding": "叮-ding",
             "sparkle": "星光-sparkle", "tada": "揭晓-tada", "success": "成功-success", "oops": "失败-oops",
             "whoosh": "嗖-whoosh", "swoosh": "嗖-短-swoosh", "bubble": "泡泡-bubble", "boing": "弹簧-boing",
-            "heartbeat": "心跳-heartbeat", "typing": "打字-typing", "click": "点击-click", "bell": "叮-低-bell"}
+            "heartbeat": "心跳-heartbeat", "typing": "打字-typing", "click": "点击-click", "bell": "叮-低-bell",
+            "pop_high": "啵-高-pop-high"}
 
 
 def fetch(url, dest):
