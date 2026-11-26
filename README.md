@@ -3,7 +3,7 @@
 **把手机 / 相机拍的生活素材，剪成可以直接发小红书、B 站、抖音的 vlog。**
 交给你的 AI 编程助手（Claude Code、Codex 等），说一句「帮我把这些素材剪成 vlog」，它会看素材、转写语音、写口播稿、出分镜给你确认，然后剪出带中英双语字幕、章节标签、花字、动态贴图和音效的成片。
 
-[English](#english) · [安装](#安装) · [怎么用](#怎么用)
+[English](#english) · [安装](#安装) · [第一次使用](#第一次使用新手-6-步) · [怎么用](#怎么用)
 
 ![成片示例：海岛酒店 vlog](docs/images/cover.jpg)
 
@@ -67,6 +67,21 @@ ln -s ~/vlog-studio/plugin/skills/vlog-studio ~/.codex/skills/vlog-studio
 ```
 
 其他工具把 `plugin/skills/vlog-studio` 放进它们的 skills 文件夹即可。更新时在 `~/vlog-studio` 里 `git pull`。
+
+## 第一次使用（新手 6 步）
+
+1. **装好工具**（只需要一次）：
+   ```bash
+   brew install ffmpeg uv
+   ```
+2. **安装 skill**：用上面「安装」里的命令。装完**新开一个 Claude Code 会话**，skill 才会加载。
+3. **准备素材**：一支片子一个文件夹，视频、照片、口播录音都放进去。口播用手机「语音备忘录」录就行（设置里音质选「无损」），说错了停一下，从这句开头重说，剪的时候会自动去掉。
+4. **说一句话**，把真实信息一起告诉它：
+   > 用 vlog-studio 帮我剪这个，素材在「桌面/海岛酒店」，酒店叫 XXX，两晚 800，我打 9.5 分。
+5. **第一次会多问几件事，也会多等一会儿**：
+   - 角标写什么、字幕中文在上还是英文在上、要不要一键建立素材库（约 45MB）。
+   - 第一次把语音转成文字时，会自动下载语音识别模型（约 1.5GB）和依赖（几百 MB）。网速慢时可能要等十几分钟，看起来像卡住了，其实在下载；可以换一个快一点的网络。以后就不用再下载了。
+6. **跟着它确认，拿成片**：画幅 → 口播稿、保留哪些现场原声 → **分镜**（每段一张样张，你确认后才生成视频）→ 拿到 MP4 和双语字幕 SRT（可以导入剪映继续改）。
 
 ## 怎么用
 
@@ -136,6 +151,8 @@ claude plugin marketplace add JessieSun-vibe/vlog-studio
 ```bash
 claude plugin install vlog-studio@vlog-studio
 ```
+
+**First run, step by step:** (1) `brew install ffmpeg uv`; (2) install the plugin, then **start a new Claude Code session** so the skill loads; (3) put one video's clips, photos and voiceover recording in a folder (record voiceover with your phone's voice memo app, lossless quality; if you misspeak, pause and restart the sentence); (4) tell the agent "use vlog-studio to edit this folder into a vlog" plus the real facts (place, price, your rating); (5) on first use it asks for your badge text and subtitle order, offers the asset library (~45MB), and downloads the speech-recognition model (~1.5GB) the first time it transcribes, which can take a while on a slow network; (6) confirm aspect ratio, script / live reactions and the **storyboard**, then you get the MP4 and a bilingual SRT.
 
 **Install (Codex / other SKILL.md agents):** clone this repo and link `plugin/skills/vlog-studio` into your agent's skills folder (e.g. `~/.codex/skills/`).
 
