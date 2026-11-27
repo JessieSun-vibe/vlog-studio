@@ -3,7 +3,7 @@
 **把手机 / 相机拍的生活素材，剪成可以直接发小红书、B 站、抖音的 vlog。**
 交给你的 AI 编程助手（Claude Code、Codex 等），说一句「帮我把这些素材剪成 vlog」，它会看素材、转写语音、写口播稿、出分镜给你确认，然后剪出带中英双语字幕、章节标签、花字、动态贴图和音效的成片。
 
-[English](#english) · [一键安装](SETUP_PROMPT.md) · [安装](#安装) · [第一次使用](#第一次使用新手-6-步) · [怎么用](#怎么用)
+[English](#english) · [授权：个人免费，不可商用](#license) · [一键安装](SETUP_PROMPT.md) · [安装](#安装) · [第一次使用](#第一次使用新手-6-步) · [怎么用](#怎么用)
 
 ![成片示例：海岛酒店 vlog](docs/images/cover.jpg)
 
@@ -160,7 +160,14 @@ plugin/skills/vlog-studio/
 
 ## License
 
-代码和文档：MIT。贴图、字体等第三方素材按各自的授权使用。
+**[CC BY-NC 4.0](LICENSE)：个人免费使用，不可商用。**
+
+- ✅ 可以：自己用、学习、修改、转发；用它剪的视频发到任何平台都可以，视频归你自己。
+- ✅ 转发或改编时请注明出处：vlog-studio by JessieSun-vibe + 仓库链接。
+- ❌ 不可以：未经许可拿去卖、放进付费课程 / 付费社群 / 资料包、集成进收费产品，或者用它接剪辑代工单。
+- 想商用请先联系我（GitHub 主页）。
+
+贴图、字体等第三方素材不属于本授权，按各自的授权使用。
 
 ---
 
@@ -195,4 +202,4 @@ claude plugin install vlog-studio@vlog-studio
 
 On first use the agent asks for your style preferences (badge text, subtitle order, your own fonts / stickers / SFX) and saves them to `~/.claude/vlog-studio/style.json`. It also offers a one-click asset library (`scripts/setup_library.py`): 3 free commercial-use Chinese fonts (OFL), 128 Google Noto animated / static emoji stickers sorted by use (CC BY 4.0 / Apache-2.0 — credit them when you publish), 18 original sound effects bundled with the skill, a catalog describing when to use each asset, and a preview page.
 
-License: MIT for code and docs; third-party assets keep their own licenses.
+License: [CC BY-NC 4.0](LICENSE). Free for personal, non-commercial use (videos you make with it are yours to publish). Commercial use (selling it, bundling it into paid courses or products, paid editing services) requires the author's permission. Third-party assets keep their own licenses.
