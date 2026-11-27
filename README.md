@@ -160,7 +160,7 @@ plugin/skills/vlog-studio/
 
 ## License
 
-**[CC BY-NC 4.0](LICENSE)：个人免费使用，不可商用。**
+**[CC BY-NC 4.0](LICENSE)：个人免费使用，不可商用。** 中文说明见 [NOTICE](NOTICE)。
 
 - ✅ 可以：自己用、学习、修改、转发；用它剪的视频发到任何平台都可以，视频归你自己。
 - ✅ 转发或改编时请注明出处：vlog-studio by JessieSun-vibe + 仓库链接。
