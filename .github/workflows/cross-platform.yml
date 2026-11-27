@@ -1,5 +1,6 @@
-# 在没有的电脑上替我们跑一遍：Windows、Intel Mac、Linux、Apple 芯片 Mac
-# 检查自检脚本、语音转写（自动选引擎）、停顿分析能不能跑通。
+# 在没有的电脑上替我们跑一遍：Windows、Intel Mac、Apple 芯片 Mac、Linux
+# 检查自检脚本、语音转写（自动选引擎）、停顿分析，以及剪辑脚本能不能加载。
+# 出错时把最后的报错写进运行摘要（annotation），不登录 GitHub 也能看到。
 name: cross-platform
 
 on:
@@ -13,33 +14,56 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-latest, macos-13, macos-latest, ubuntu-latest]
+        os: [windows-latest, macos-15-intel, macos-latest, ubuntu-latest]
     runs-on: ${{ matrix.os }}
     defaults:
       run:
         shell: bash
     env:
-      PYTHONUTF8: "0"   # 故意不开 UTF-8 模式，确认脚本自己处理好了中文编码
+      PYTHONUTF8: "0"   # 故意不开 UTF-8 模式，确认脚本自己处理好了中文
+      S: plugin/skills/vlog-studio/scripts
     steps:
       - uses: actions/checkout@v4
       - uses: astral-sh/setup-uv@v6
-      - name: ffmpeg
+        with:
+          enable-cache: false
+      - name: ffmpeg（Windows / Linux）
+        if: runner.os != 'macOS'
         uses: FedericoCarboni/setup-ffmpeg@v3
+      - name: ffmpeg（Mac）
+        if: runner.os == 'macOS'
+        run: brew install ffmpeg
+      - name: 准备报错收集
+        run: |
+          cat > "$RUNNER_TEMP/try.sh" <<'EOF'
+          # 用法：try.sh <命令...>；失败时把输出最后一段写成 ::error:: 摘要
+          out="$RUNNER_TEMP/out.txt"
+          "$@" > "$out" 2>&1; code=$?
+          cat "$out"
+          if [ $code -ne 0 ]; then
+            msg=$(tail -c 1800 "$out" | tr -d '\r' | sed -e 's/%/%25/g' | awk 'BEGIN{ORS="%0A"}{print}')
+            echo "::error title=$1 失败::$msg"
+          fi
+          exit $code
+          EOF
+          chmod +x "$RUNNER_TEMP/try.sh"
       - name: 自检
-        run: uv run --python 3.12 python plugin/skills/vlog-studio/scripts/doctor.py || true
+        run: '"$RUNNER_TEMP/try.sh" uv run --python 3.12 python "$S/doctor.py" || true'
       - name: 测试音频
         run: curl -fsSL -o jfk.flac https://raw.githubusercontent.com/SYSTRAN/faster-whisper/master/tests/data/jfk.flac
       - name: 转写（自动选引擎）
-        run: uv run plugin/skills/vlog-studio/scripts/transcribe.py work jfk.flac --lang en --prompt "测试，巴厘岛"
+        run: '"$RUNNER_TEMP/try.sh" uv run "$S/transcribe.py" work jfk.flac --lang en --prompt "测试，巴厘岛"'
       - name: 检查转写结果
         run: |
-          uv run --python 3.12 python - <<'EOF'
+          "$RUNNER_TEMP/try.sh" uv run --python 3.12 python -c '
           import json
           r = json.load(open("work/transcripts/jfk.json", encoding="utf-8"))
           words = [w for s in r["segments"] for w in s["words"]]
           print(r["engine"], len(words), "words:", r["text"])
           assert len(words) > 10 and "country" in r["text"].lower()
           assert all(w["end"] >= w["start"] for w in words)
-          EOF
+          '
       - name: 停顿分析
-        run: uv run --python 3.12 python plugin/skills/vlog-studio/scripts/clean_speech.py report work/transcripts/jfk.json work/transcripts/jfk_16k.wav
+        run: '"$RUNNER_TEMP/try.sh" uv run --python 3.12 python "$S/clean_speech.py" report work/transcripts/jfk.json work/transcripts/jfk_16k.wav'
+      - name: 剪辑脚本能加载
+        run: '"$RUNNER_TEMP/try.sh" uv run --python 3.12 --with pillow --with resvg-py --with opencv-python python -c "import sys; sys.path.insert(0, \"$S\"); import render, storyboard, inspect_footage, face_track, speedup, timeline_tools; print(\"ok\")"'

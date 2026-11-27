@@ -14,6 +14,9 @@
 剪完一定重新转写输出文件核对。
 """
 import array, difflib, json, math, os, subprocess, sys, wave
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 
 def load16k(path):

@@ -8,6 +8,9 @@
 """
 import argparse, colorsys, json, os, subprocess, sys
 from PIL import Image, ImageDraw, ImageFont, ImageOps
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)

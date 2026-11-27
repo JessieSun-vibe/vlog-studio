@@ -8,6 +8,10 @@
 没有模型时退回 Haar。
 """
 import argparse, json, os, urllib.request
+import sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 YUNET_URL = "https://github.com/opencv/opencv_zoo/raw/main/models/face_detection_yunet/face_detection_yunet_2023mar.onnx"
 CACHE = os.path.expanduser("~/.cache/vlog-studio/face_detection_yunet_2023mar.onnx")

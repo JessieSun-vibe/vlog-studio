@@ -9,6 +9,9 @@
 - 加 --update-style：把风格档案里的字体、音效、贴图库、素材清单路径指向这个素材库（没有档案就用模板新建）。
 """
 import argparse, hashlib, html, json, os, shutil, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SKILL = os.path.dirname(HERE)

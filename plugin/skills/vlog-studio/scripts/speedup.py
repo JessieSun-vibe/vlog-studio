@@ -4,6 +4,9 @@
   python3 speedup.py <成片.mp4> <成片.srt> 1.2 [输出.mp4]
 """
 import re, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 
 def main():

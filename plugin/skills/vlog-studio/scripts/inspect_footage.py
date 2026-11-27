@@ -7,6 +7,9 @@
 需要 ffmpeg / ffprobe 和 Pillow（uv run --with pillow python ...）；macOS 自带 sips 用来转正照片。
 """
 import argparse, json, os, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 VIDEO = {".mov", ".mp4", ".m4v", ".avi", ".mkv"}
 PHOTO = {".jpg", ".jpeg", ".heic", ".png"}

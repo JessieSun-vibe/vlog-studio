@@ -8,6 +8,9 @@
 来源：https://github.com/remotion-dev/animated-emoji （预渲染自 https://googlefonts.github.io/noto-emoji-animation/）
 """
 import hashlib, json, os, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 RAW = "https://raw.githubusercontent.com/remotion-dev/animated-emoji/main/public/{}-1x.webm"
 

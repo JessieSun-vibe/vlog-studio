@@ -8,6 +8,9 @@
 退出码 0 = 可以用；1 = 有必须先修的问题（看输出里的「怎么修」）。
 """
 import json, os, platform, shutil, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 OK, WARN, BAD = "✅", "⚠️", "❌"
 HERE = os.path.dirname(os.path.abspath(__file__))

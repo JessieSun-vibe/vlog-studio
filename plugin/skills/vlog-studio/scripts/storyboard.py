@@ -12,6 +12,9 @@
 """
 import argparse, base64, html, json, os, subprocess, sys
 from PIL import Image, ImageOps
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 HERE = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, HERE)
 from render import (load_style, brand_png, tag_png, fx_png, sub_png, card_png, cover, piece_duration,  # noqa: E402

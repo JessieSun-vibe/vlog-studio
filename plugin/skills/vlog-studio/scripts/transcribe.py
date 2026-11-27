@@ -22,6 +22,9 @@
 - 识别会把同一句的重复合并、把专有名词听错（巴厘岛→巴黎岛、Fried→Fair）。字幕要人工改正，重复要看能量图确认。
 """
 import argparse, json, os, platform, subprocess, sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 MLX_MODEL = "mlx-community/whisper-large-v3-turbo"
 FASTER_MODEL = "mobiuslabsgmbh/faster-whisper-large-v3-turbo"

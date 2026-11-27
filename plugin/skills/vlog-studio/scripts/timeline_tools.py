@@ -9,6 +9,10 @@
 否则上一句的尾字会出现在下一句开头。
 """
 import array, json, math, re, wave
+import sys
+for _s in (sys.stdout, sys.stderr):  # 英文版 Windows 的终端不是 UTF-8，打印中文会报错
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8", errors="replace")
 
 
 class Transcript:
