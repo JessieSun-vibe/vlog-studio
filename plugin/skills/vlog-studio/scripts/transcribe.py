@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # /// script
-# requires-python = ">=3.10"
+# requires-python = ">=3.10,<3.14"   # Intel Mac 上 onnxruntime 还没有 3.14 的包
 # dependencies = [
 #   "mlx-whisper; sys_platform == 'darwin' and platform_machine == 'arm64'",
 #   "faster-whisper>=1.1; sys_platform != 'darwin' or platform_machine != 'arm64'",

@@ -102,7 +102,7 @@ def prefetch():
         steps.append(("语音识别（mlx-whisper 等依赖约 0.5GB + 模型约 1.5GB）", ["uv", "run", "--quiet", "--with", "mlx-whisper", "python", "-c",
                       "from huggingface_hub import snapshot_download; snapshot_download('mlx-community/whisper-large-v3-turbo')"]))
     else:
-        steps.append(("语音识别（faster-whisper 等依赖约 0.3GB + 模型约 1.6GB）", ["uv", "run", "--quiet", "--with", "faster-whisper>=1.1", "python", "-c",
+        steps.append(("语音识别（faster-whisper 等依赖约 0.3GB + 模型约 1.6GB）", ["uv", "run", "--quiet", "--python", "3.12", "--with", "faster-whisper>=1.1", "python", "-c",
                       "from huggingface_hub import snapshot_download; snapshot_download('mobiuslabsgmbh/faster-whisper-large-v3-turbo')"]))
     for name, cmd in steps:
         print(f"… {name}", flush=True)

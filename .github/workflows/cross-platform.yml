@@ -27,9 +27,12 @@ jobs:
       - uses: astral-sh/setup-uv@v6
         with:
           enable-cache: false
-      - name: ffmpeg（Windows / Linux）
-        if: runner.os != 'macOS'
+      - name: ffmpeg（Windows）
+        if: runner.os == 'Windows'
         uses: FedericoCarboni/setup-ffmpeg@v3
+      - name: ffmpeg（Linux）
+        if: runner.os == 'Linux'
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg
       - name: ffmpeg（Mac）
         if: runner.os == 'macOS'
         run: brew install ffmpeg
@@ -56,7 +59,8 @@ jobs:
       - name: 检查转写结果
         run: |
           "$RUNNER_TEMP/try.sh" uv run --python 3.12 python -c '
-          import json
+          import json, sys
+          sys.stdout.reconfigure(encoding="utf-8")
           r = json.load(open("work/transcripts/jfk.json", encoding="utf-8"))
           words = [w for s in r["segments"] for w in s["words"]]
           print(r["engine"], len(words), "words:", r["text"])
